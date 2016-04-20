@@ -1,0 +1,14 @@
+.div-all-left{ 
+	float:left;
+	text-align:left;
+}
+
+.div-all-right{
+	float:right;
+	text-align:right;
+}
+
+.el-centre{
+    white-space: normal;
+    text-align:center;
+}

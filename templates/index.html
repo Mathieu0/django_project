@@ -1,0 +1,89 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<head>
+	
+	<title>{% block title %}Strona przykładowa{% endblock %}</title>
+	
+	<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}">
+	<link rel='stylesheet' type='text/css' href='{% static "css/common.css" %}'>
+	<script src='{% static "js/jquery-1.11.3.min.js" %}'></script>
+	<script src='{% static "js/bootstrap.min.js" %}'></script>
+</head>
+<body>
+	<script>
+		$(function() {
+			var numer = ($("#naglowek").height() - $("#but_zaloguj").height())/2;
+			$("#but_zaloguj").css("margin-top", numer);
+		});
+	</script>
+	
+	<!-- Login modal -->
+
+	<div id="log_modal_login" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+	  <div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="form-group" style="width:50%; margin:auto; margin-top:10px;">
+				<div class="panel-heading">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<label for="tytul">Podaj nazwę</label>
+				</div>
+				<input type="tytul" class="form-control" id="tytul" placeholder="Nazwa">
+			</div>
+			<div style="height:20px;"></div>
+			<div class="form-group" style="width:50%; margin:auto; margin-bottom:10px;">
+				<button class="btn btn-default" type="submit" onclick="Pobierz_wartosc();">Pokaż</button>
+			</div>
+		</div>
+	  </div>
+	</div>
+	
+	<!-- Register modal -->
+
+	<div id="log_modal_register" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+	  <div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="form-group" style="width:50%; margin:auto; margin-top:10px;">
+				<div class="panel-heading">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<label for="tytul">Podaj nazwę</label>
+				</div>
+				<input type="tytul" class="form-control" id="tytul" placeholder="Nazwa">
+			</div>
+			<div style="height:20px;"></div>
+			<div class="form-group" style="width:50%; margin:auto; margin-bottom:10px;">
+				<button class="btn btn-default" type="submit" onclick="Pobierz_wartosc();">Pokaż</button>
+			</div>
+		</div>
+	  </div>
+	</div>
+	
+	<!-- Header bar -->
+	
+	<nav id="naglowek" class="navbar navbar-default" style="height:25px; border-radius:0px;">
+		<div class="div-all-left" style="width:50%;"></div>
+		<div class="div-all-right" style="width:50%;">
+			<a href="/admin/">
+				<div id="but_zaloguj" style="margin-right:5%;"><button type="button" class="btn btn-default btn-sm">Zaloguj</button></div>
+			</a>
+		</div>
+	</nav> 
+	
+	<!-- Page body -->
+	
+	<div>
+	
+		<h3>W tej chwili mamy czas: {{czas}}</h3>
+	
+	</div>
+	
+	<div style="height:20px;"></div>
+	
+	<div id="content">
+		
+		{% include 'post_list.html' %}
+	
+	</div>
+	
+
+	
+</body>
