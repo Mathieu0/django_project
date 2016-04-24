@@ -6,7 +6,7 @@
 
 		{% for post in posts %}
 			<div>
-				<h4><a href="">{{ post.title }}</a></h1>
+				<h4><a href="">{{ post.title }}</a></h4>
 				<p>{{ post.tekst|linebreaks }}</p>
 				<p>Opublikowano: {{ post.published_date }} przez {{ post.author }}</p>
 			</div>
@@ -16,6 +16,6 @@
 
 		<p>Brak postów</p>
 
-{% endif %}
+	{% endif %}
 
 {% endblock %}

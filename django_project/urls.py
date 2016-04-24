@@ -9,5 +9,6 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', views.index, name='index'),
     url(r'^admin/', include(admin.site.urls)),
+	url(r'^klub/(?P<ik>[0-9]+)/$', views.club_detail),
 	#url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
 )

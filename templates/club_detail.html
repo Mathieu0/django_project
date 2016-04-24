@@ -1,0 +1,18 @@
+﻿{% block klub %}
+
+	{% if klub %}
+
+		<div>
+			<h4>Klub: {{ klub.nazwa_klubu }}</h4>
+			<p>Wartość składu: {{ klub.wartosc_skladu }}</p>
+		</div>
+	
+	{% else %}
+	
+		<div>
+			<p>Brak takiego klubu.</p>
+		</div>
+		
+	{% endif %}
+	
+{% endblock %}
